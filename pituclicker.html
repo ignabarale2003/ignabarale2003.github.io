@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>PITUCLICKERS</title>
+</head>
+
+<body style="background-image:url(PEPOCHIQUITO.png)" id="FONDO">
+
+    <h1 style="text-align:center">
+        <div style="font-size:80px">
+            <div style="color:black">
+                <div style="background-color:orange">
+                    <div style="border:5px solid turquoise">
+                        <div style="font-style:italic">
+                            PEPITUSAS' CLICKER
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h1>
+
+    <p style="text-align:center">
+
+        <button type="button" onclick="ROJO()" style="background-color:red">
+            <div style="font-size:40px">
+                ROJO
+            </div>
+        </button>
+
+        <button type="button" onclick="VERDE()" style="background-color:green">
+            <div style="font-size:40px">
+                VERDE
+            </div>
+        </button>
+
+        <button type="button" onclick="AZUL()" style="background-color:blue">
+            <div style="font-size:40px">
+                AZUL
+            </div>
+        </button>
+
+        <button type="button" onclick="NARANJA()" style="background-color:orange">
+            <div style="font-size:40px">
+                NARANJA
+            </div>
+        </button>
+
+        <button type="button" onclick="BLANCO()" style="background-color:white">
+            <div style="font-size:40px">
+                BLANCO
+            </div>
+        </button>
+
+        <button type="button" onclick="NEGRO()" style="background-color:black">
+            <div style="font-size:40px">
+                <div style="color:white">
+                    NEGRO
+                </div>
+            </div>
+        </button>
+
+        <button type="button" onclick="ROSA()" style="background-color:darkmagenta">
+            <div style="font-size:40px">
+                    ROSA
+            </div>
+        </button>
+
+    </p>
+
+    <script>
+        var PITUSAS = 0
+    </script>
+
+    <p style="color:black">
+        <div style="font-size:40px">
+            <div style="text-align:center">
+                PITUSAS:
+            </div>
+        </div>
+    </p>
+
+    <p style="text-align:center">
+        <div style="font-size:80px">
+            <div style="text-align:center">
+                <input type="text" id="CUADRO" disabled style="font-size:50px">
+            </div>
+        </div>
+    </p>
+
+    <script>
+        function SUMA() {
+            PITUSAS = PITUSAS + 16;
+            document.getElementById('CUADRO').value = PITUSAS;
+        }
+    </script>
+
+    <p style="text-align:center">
+        <a href="#" onclick="SUMA()" on>
+            <img src="PEPO.png" style="border:5px solid black" id="CLICKER" />
+        </a>
+    </p>
+
+    <script>
+        function ROJO() {
+            document.getElementById("FONDO").style.backgroundColor = "red";
+        }
+    </script>
+
+    <script>
+        function VERDE() {
+            document.getElementById("FONDO").style.backgroundColor = "green";
+        }
+    </script>
+
+    <script>
+        function AZUL() {
+            document.getElementById("FONDO").style.backgroundColor = "blue";
+        }
+    </script>
+
+    <script>
+        function NARANJA() {
+            document.getElementById("FONDO").style.backgroundColor = "orange";
+        }
+    </script>
+
+    <script>
+        function BLANCO() {
+            document.getElementById("FONDO").style.backgroundColor = "white";
+        }
+    </script>
+
+    <script>
+        function NEGRO() {
+            document.getElementById("FONDO").style.backgroundColor = "black";
+        }
+    </script>
+
+    <script>
+    function ROSA() {
+        document.getElementById("FONDO").style.backgroundColor = "darkmagenta"
+    }
+    </script>
+
+    <script>
+        function CLICKER() {
+            document.getElementById("CLICKER").src = "PEPITUSAS.png"
+        }
+    </script>
+
+    <script>
+        function CLICKER2() {
+            document.getElementById("CLICKER").src = "PEPO.png"
+        }
+    </script>
+
+    <p>
+
+        <div style="text-align:left">
+            <a href="#" onclick="CLICKER()" on>
+                <div style="opacity:0.5">
+                    <img src="PITUSAS.png" style="height:70px" />
+                </div>
+            </a>
+        </div>
+
+        <div style="text-align:left">
+            <a href="#" onclick="CLICKER2()" on>
+                <div style="opacity:0.5">
+                    <img src="PEPO.png" style="height:70px" />
+                </div>
+            </a>
+        </div>
+
+    </p>
+
+</body>
+</html>

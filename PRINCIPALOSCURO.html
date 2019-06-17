@@ -11,8 +11,14 @@
 <body style="background-image:url(IGNAFONDO.png)" id="FONDO">
 
     <script>
-        document.getElementById("FONDO").style.backgroundColor = "#ffffcc"
+        document.getElementById("FONDO").style.backgroundColor = "black"
         document.getElementById("FONDO").style.backgroundSize = "40px"
+    </script>
+
+    <script>
+        function MODOOSCURO() {
+            document.getElementById("FONDO").style.backgroundColor = "black";
+        }
     </script>
 
     <style>
@@ -109,19 +115,19 @@
         .ALINEAMIENTO {
             text-align: center;
         }
-
         .BOTONMODO {
-            text-align: center;
-            border: 3px solid white;
-            background-color:black;
-            color:white;
-            font-family:Arial;
-            max-width:350px;
+            text-align:center;
             font-size:40px;
+            color:black;
+            background-color:white;
+            border:3px solid black;
+            max-width:350px;
             margin:auto;
+            font-family:Arial;
         }
-        .BOTONFONDO {
-            color:white;
+        .BOTON {
+            text-align:center;
+            color:black;
         }
     </style>
     <p class="FONO">
@@ -135,10 +141,10 @@
     </h4>
 
     <h3>
-        <a href="PAGINASPARAIGNASPAGE.html" class="PAGINAS">
+        <a href="PAGINASOSCURO.html" class="PAGINAS">
             PAGINAS
         </a>
-        <a href="YO.html" class="YO">
+        <a href="YOOSCURO.html" class="YO">
             YO
         </a>
     </h3>
@@ -156,8 +162,8 @@
         </a>
     </p>
     <p class="BOTONMODO">
-        <a href="PRINCIPALOSCURO.html" class="BOTONFONDO">
-            MODO OSCURO
+        <a href="index.html" class="BOTON">
+            MODO NORMAL
         </a>
     </p>
 </body>

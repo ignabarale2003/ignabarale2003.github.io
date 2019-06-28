@@ -142,8 +142,34 @@
             max-width: 400px;
             font-size: 45px;
         }
+
         .PARRAFOGILADAS {
-            height:100px;
+            height: 100px;
+        }
+
+        .CARA {
+            max-width: 200px;
+            animation-name: ANIMACION;
+            animation-duration: 8s;
+            animation-fill-mode: both;
+            animation-delay: 5s;
+        }
+
+        @keyframes ANIMACION {
+            0% {
+                position: relative;
+                top: 1000px;
+                opacity:0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                position: relative;
+                top: 10px;
+            }
         }
     </style>
 
@@ -179,11 +205,15 @@
             <img src="SPOTIFY.png" class="REDESSPOTIFY" />
         </a>
     </p>
-
-    <p class="BOTONMODO">
-        <a href="PRINCIPALOSCURO.html" class="BOTONFONDO">
-            MODO OSCURO
-        </a>
+    <div style="height:80px">
+        <p class="BOTONMODO">
+            <a href="PRINCIPALOSCURO.html" class="BOTONFONDO">
+                MODO OSCURO
+            </a>
+        </p>
+    </div>
+    <p style="text-align:center">
+        <img src="IGNAFONDO.png" class="CARA" />
     </p>
 </body>
 </html>

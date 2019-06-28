@@ -30,7 +30,7 @@
             text-align: center;
             color: black;
             border: 5px solid black;
-            position:sticky;
+            position: sticky;
         }
 
         .REDESINSTA {
@@ -58,9 +58,9 @@
             font-size: 30px;
             border: 3px solid black;
             background-color: purple;
-            text-align:center;
-            max-width:950px;
-            margin:auto;
+            text-align: center;
+            max-width: 950px;
+            margin: auto;
         }
 
         .PEPITUSAS {
@@ -82,10 +82,11 @@
             float: right;
             color: black;
         }
-        .PAGINAS:hover {
-             width: 350px;
-             font-size: 70px;
-        }
+
+            .PAGINAS:hover {
+                width: 350px;
+                font-size: 70px;
+            }
 
         .YO {
             text-align: center;
@@ -98,12 +99,13 @@
             position: relative;
             left: 5px;
         }
-        .YO:hover {
-            width: 250px;
-            font-size: 70px;
-            position: relative;
-            height: 100px;
-        }
+
+            .YO:hover {
+                width: 250px;
+                font-size: 70px;
+                position: relative;
+                height: 100px;
+            }
 
         .TITULORED {
             text-align: center;
@@ -111,8 +113,8 @@
             font-family: Arial;
             font-size: 30px;
             border: 3px solid black;
-            max-width:600px;
-            margin:auto;
+            max-width: 600px;
+            margin: auto;
         }
 
         .PAGINASNOLINK {
@@ -126,26 +128,55 @@
         .ALINEAMIENTO {
             text-align: center;
         }
+
         .BOTONMODO {
-            text-align:center;
-            font-size:40px;
-            color:black;
-            background-color:#ffffcc;
-            border:3px solid black;
-            max-width:350px;
-            margin:auto;
-            font-family:Arial;
+            text-align: center;
+            font-size: 40px;
+            color: black;
+            background-color: #ffffcc;
+            border: 3px solid black;
+            max-width: 350px;
+            margin: auto;
+            font-family: Arial;
         }
-        .BOTONMODO:hover {
-            max-width: 400px;
-            font-size: 45px;
-        }
+
+            .BOTONMODO:hover {
+                max-width: 400px;
+                font-size: 45px;
+            }
+
         .BOTON {
-            text-align:center;
-            color:black;
+            text-align: center;
+            color: black;
         }
+
         .PARRAFOGILADAS {
-            height:100px;
+            height: 100px;
+        }
+
+        .CARA {
+            max-width: 200px;
+            animation-name: ANIMACION;
+            animation-duration: 8s;
+            animation-fill-mode: both;
+            animation-delay: 5s;
+        }
+
+        @keyframes ANIMACION {
+            0% {
+                position: relative;
+                top: 1000px;
+                opacity:0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                position: relative;
+                top: 10px;
+            }
         }
     </style>
     <p class="FONO">
@@ -179,10 +210,15 @@
             <img src="SPOTIFY.png" class="REDESSPOTIFY" />
         </a>
     </p>
-    <p class="BOTONMODO">
-        <a href="index.html" class="BOTON">
-            MODO NORMAL
-        </a>
+    <div style="height: 80px">
+        <p class="BOTONMODO">
+            <a href="index.html" class="BOTON">
+                MODO NORMAL
+            </a>
+        </p>
+    </div>
+    <p style="text-align:center">
+        <img src="IGNAFONDO.png" class="CARA" />
     </p>
 </body>
 </html>

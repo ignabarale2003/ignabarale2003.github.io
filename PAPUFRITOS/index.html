@@ -72,7 +72,7 @@
 
         function MEJORARESTOCHECK() {
             if (CLICKS >= PRECIORESTO) {
-                document.getElementById("MEJORARESTO").style.backgroundColor = "darkorange";
+                document.getElementById("MEJORARESTO").style.backgroundColor = "yellow";
             }
             else if (CLICKS < PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "grey";
@@ -81,7 +81,7 @@
 
         function MEJORAHUERTACHECK() {
             if (CLICKS >= PRECIOHUERTA) {
-                document.getElementById("MEJORAHUERTA").style.backgroundColor = "darkorange";
+                document.getElementById("MEJORAHUERTA").style.backgroundColor = "yellow";
             }
             else if (CLICKS < PRECIOHUERTA) {
                 document.getElementById("MEJORAHUERTA").style.backgroundColor = "grey";
@@ -100,7 +100,7 @@
                 TOTALRESTOS = TOTALRESTOS + 1;
                 CLICKS = CLICKS - PRECIORESTO;
                 CPS = CPS + 1;
-                PRECIORESTO = PRECIORESTO * 1.2;
+                PRECIORESTO = PRECIORESTO * 1.1;
             }
             else if (CLICKS < PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "red";
@@ -112,7 +112,7 @@
                 TOTALHUERTA = TOTALHUERTA + 1;
                 CLICKS = CLICKS - PRECIOHUERTA;
                 CPS = CPS + 5;
-                PRECIOHUERTA = PRECIOHUERTA * 1.2;
+                PRECIOHUERTA = PRECIOHUERTA * 1.1;
             }
             else if (CLICKS < PRECIOHUERTA) {
                 document.getElementById("MEJORAHUERTA").style.backgroundColor = "red";
@@ -136,7 +136,7 @@
 
     <div>
 
-        <div style="color:black;text-align:center;font-family:'Berlin Sans FB';font-size:50px;height:60px;background-color:darkorange;border:3px solid black;">
+        <div style="color:black;text-align:center;font-family:'Berlin Sans FB';font-size:50px;height:60px;background-color:orange;border:3px solid black;">
             Papufrito's Clicker
         </div>
 
@@ -144,7 +144,7 @@
 
         </p>
 
-        <p id="TIPODEPAPA"  style="color:black;text-align:center;font-family:'Berlin Sans FB';font-size:30px;background-color:darkorange;border:3px solid black;margin:auto;max-width:600px">
+        <p id="TIPODEPAPA"  style="color:black;text-align:center;font-family:'Berlin Sans FB';font-size:30px;background-color:yellow;border:3px solid black;margin:auto;max-width:600px">
             PAPA CRUDA
         </p>
 
@@ -156,7 +156,7 @@
 
         </p>
     </div>
-    <p style="width:2100px">
+    <p style="max-width:2100px;margin:auto;text-align:center">
 
         <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:600px;max-height:900px;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;">
 

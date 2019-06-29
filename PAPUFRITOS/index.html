@@ -15,10 +15,9 @@
             animation-duration:0.1s;
         }
         @keyframes ANIMACION {
-            0% {width:600px;height:300px}
-            50% {width:650px}
+            0% {width:700px;height:324px}
             100% {width:600px;height:424px}
-        }
+            }
         .CUADROPAPA {
             position:absolute;
             right:10px;
@@ -28,6 +27,9 @@
         .MEJORAS {
             font-size:40px;
             max-width:900px;
+        }
+        .ESPACIO {
+            font-size:40px;
         }
     </style>
 
@@ -45,6 +47,9 @@
         var PRECIORESTO = 100;
         var TOTALRESTOS = 0;
 
+        var PRECIOHUERTA = 1000;
+        var TOTALHUERTA = 0;
+
         function CLICKNORMAL() {
             CLICKS = CLICKS + SUMANORMAL;
             document.getElementById("input").getAnimations = "ANIMACION";
@@ -57,34 +62,65 @@
         function ACTUALIZACION() {
             document.getElementById("input").innerHTML = CLICKS;
             document.getElementById("TITULO").innerHTML = "PAPUFRITOS-" + CLICKS;
-            document.getElementById("RESTOTEXTO").innerHTML = "RESTAURANTS - " + TOTALRESTOS + "      PRECIO = " + PRECIORESTO;
+            document.getElementById("RESTOTEXTO").innerHTML = "Restaurants - " + TOTALRESTOS + "-PRECIO = " + PRECIORESTO;
             document.getElementById("CPS").innerHTML = "PapasPS=" + CPS;
+            document.getElementById("HUERTATEXTO").innerHTML = "Huertas - " + TOTALHUERTA + "-PRECIO = " + PRECIOHUERTA;
         }
+
+        //FUNCIONES DE CHECK
 
         function MEJORARESTOCHECK() {
             if (CLICKS >= PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "darkorange";
-
             }
             else if (CLICKS < PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "grey";
             }
         }
 
+        function MEJORAHUERTACHECK() {
+            if (CLICKS >= PRECIOHUERTA) {
+                document.getElementById("MEJORAHUERTA").style.backgroundColor = "darkorange";
+            }
+            else if (CLICKS < PRECIOHUERTA) {
+                document.getElementById("MEJORAHUERTA").style.backgroundColor = "grey";
+            }
+        }
+
+        function MEJORACHECK() {
+            MEJORARESTOCHECK();
+            MEJORAHUERTACHECK();
+        }
+
+        //FUNCIONES DE COMPRA
+
         function MEJORARESTO() {
             if (CLICKS >= PRECIORESTO) {
                 TOTALRESTOS = TOTALRESTOS + 1;
                 CLICKS = CLICKS - PRECIORESTO;
                 CPS = CPS + 1;
-                PRECIORESTO = PRECIORESTO * 1.1;
+                PRECIORESTO = PRECIORESTO * 1.2;
             }
             else if (CLICKS < PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "red";
             }
         }
 
+        function MEJORAHUERTA() {
+            if (CLICKS >= PRECIOHUERTA) {
+                TOTALHUERTA = TOTALHUERTA + 1;
+                CLICKS = CLICKS - PRECIOHUERTA;
+                CPS = CPS + 5;
+                PRECIOHUERTA = PRECIOHUERTA * 1.2;
+            }
+            else if (CLICKS < PRECIOHUERTA) {
+                document.getElementById("MEJORAHUERTA").style.backgroundColor = "red";
+            }
+        }
+
+
         setInterval(function () {
-            MEJORARESTOCHECK();
+            MEJORACHECK();
         }, 1000 / ROJITO)
 
         setInterval(function () {
@@ -113,24 +149,51 @@
 
     </div>
     <p style="width:2100px">
+
         <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:600px;height:550px;border:4px solid black;font-family:'Berlin Sans FB';font-size:60px;">
+
             <div style="text-align:center">
                 MEJORAS
             </div>
+
+
             <div style="background-color:darkorange;border:2px solid black;" id="MEJORARESTO" class="MEJORAS">
+
                 <a href="#" onclick="MEJORARESTO()">
-                    <div id="RESTOTEXTO" class="MEJORAS">
+                    <div id="RESTOTEXTO" class="MEJORAS"  style="color:black">
                         RESTAURANT
                     </div>
                 </a>
+
                 <div>
                     <div style="font-size:30px">
                         Genera una papa cada segundo!
                     </div>
-                    <img src="IMAGENES/RESTO.png" style="width:150px" />
+                    <img src="IMAGENES/RESTO.png" style="height:84px" />
                 </div>
+
             </div>
 
+            <p class="ESPACIO">
+
+            </p>
+
+            <div style="background-color:darkorange;border:2px solid black;" id="MEJORAHUERTA" class="MEJORAS">
+
+                <a href="#" onclick="MEJORAHUERTA()">
+                    <div id="HUERTATEXTO" class="MEJORAS" style="color:black">
+
+                    </div>
+                </a>
+
+                <div>
+                    <div style="font-size:30px">
+                        Cosecha 5 papas por segundo!
+                    </div>
+                    <img src="IMAGENES/HUERTA.png" style="height:84px" />
+                </div>
+
+            </div>
         </div>
 
         <div class="CUADROPAPA">

@@ -9,14 +9,45 @@
     </title>
     <link rel="icon" href="ICONO.ico" />
 </head>
-<body style="background-image:url(IGNAFONDO.png)" id="FONDO">
-
-    <script>
-        document.getElementById("FONDO").style.backgroundColor = "#ffffcc"
-        document.getElementById("FONDO").style.backgroundSize = "40px"
-    </script>
-
+<body id="FONDO" style="background-color:#ffffcc">
     <style>
+        #FONDO {
+            background: none;
+            font-family: Androgyne;
+            background-image: url('IGNAFONDO1.png'), url('IGNAFONDO2.png'), url('IGNAFONDO3.png');
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index:1;
+            -webkit-animation: FONDO 1000s linear infinite;
+            -moz-animation: FONDO 1000s linear infinite;
+            -ms-animation: FONDO 1000s linear infinite;
+            animation: FONDO 1000s linear infinite;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+        }
+        @keyframes FONDO {
+          0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+          100% {background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;}          
+        }
+        @-moz-keyframes FONDO {
+          0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+          100% {background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;}          
+        }
+        @-webkit-keyframes FONDO {
+          0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+          100% {background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;}          
+        }
+        @-ms-keyframes FONDO {
+          0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+          100% {background-position: 50000px 50000px, 10000px 20000px, -10000px 15000px;}  
+        }
+
         .TITULOGENERAL {
             font-size: 60px;
             background-color: orange;
@@ -204,13 +235,6 @@
             <img src="SPOTIFY.png" class="REDESSPOTIFY" />
         </a>
     </p>
-    <div style="height:80px">
-        <p class="BOTONMODO">
-            <a href="PRINCIPALOSCURO.html" class="BOTONFONDO">
-                MODO OSCURO
-            </a>
-        </p>
-    </div>
     <p style="text-align:center">
         <img src="IGNAFONDO.png" class="CARA" />
     </p>

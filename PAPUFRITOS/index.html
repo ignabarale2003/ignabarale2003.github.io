@@ -11,7 +11,7 @@
         PAPUFRITOS CLICKER
     </title>
 </head>
-<body style="background-color:#828282;background-image:url(IMAGENES/PAPAFONDO.png);background-size:30px" id="FONDO">
+<body style="background-color:#828282;background-image:url(IMAGENES/PAPAFONDO.png);background-size:30px" id="FONDO" onload="init()">
     <style>
         .BOTONPRINCIPAL:active {
             animation-name: ANIMACION;
@@ -39,6 +39,20 @@
     </style>
 
     <script>
+
+        //SONIDO
+        var PLAYCOUNT = 0;
+
+    function init() {
+        var ÑAM = document.getElementById("ÑAM");
+    }
+    function PLAYÑAM() {
+        ÑAM.load();
+        ÑAM.play();
+        PLAYCOUNT++
+    }
+        //SONIDO
+
         var CLICKS = 0;
         var SUMANORMAL = 1;
         var CPS = 0;
@@ -58,6 +72,7 @@
         function CLICKNORMAL() {
             CLICKS = CLICKS + SUMANORMAL;
             document.getElementById("input").getAnimations = "ANIMACION";
+            PLAYÑAM();
         }
 
         function CLICKSPS() {
@@ -207,6 +222,9 @@
 
         <p style="text-align:center;width:50%;float:right;position:absolute;right:5px;">
             <img src="IMAGENES/PAPAINICIAL.png" style="width:80%" class="BOTONPRINCIPAL" onclick="CLICKNORMAL()" />
+            <audio  controls="controls" id="ÑAM" hidden>
+                <source src="SONIDOS/ÑAM.mp3" type="audio/mp3"/>
+            </audio>
         </p>
 
     </div>

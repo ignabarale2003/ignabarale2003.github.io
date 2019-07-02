@@ -22,7 +22,14 @@
             50% {width:70%;height:70%}
             100% {width:80%;height:80%}
             }
-
+        .MEJORACLICKCUADRO {
+        font-size:40px;
+        width:99%;
+        background-color:green;
+        border: 3px solid black;
+        text-align:center;
+        position:sticky;
+        }
         .MEJORAS {
             font-size:40px;
             width:99%;
@@ -87,7 +94,17 @@
             document.getElementById("HUERTATEXTO").innerHTML = "Huertas - " + TOTALHUERTA + "-PRECIO = " + PRECIOHUERTA;
         }
 
-        //FUNCIONES DE CHECK
+        //FUNCIONES DE CHECK----------------------------------------------------------------------------------
+        
+        function MEJORACLICKCHECK() {
+            if (TOTALRESTOS >= 100) {
+                document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "green";
+            }
+            else if (TOTALRESTOS < 100) {
+                document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "grey";
+            }
+        }
+        
 
         function MEJORARESTOCHECK() {
             if (CLICKS >= PRECIORESTO) {
@@ -110,16 +127,30 @@
         function MEJORACHECK() {
             MEJORARESTOCHECK();
             MEJORAHUERTACHECK();
+            MEJORACLICKCHECK();
         }
 
         //FUNCIONES DE COMPRA
+
+        function MEJORACLICK() {
+            if (TOTALRESTOS >= 100) {
+                SUMANORMAL = 20;
+                document.getElementById("MEJORACLICKCUADRO").style.overflow = "hidden";
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAHERVIDA.png";
+            }
+            else if (TOTALRESTOS < 100) {
+                document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "red";
+            }
+        }
+
+
 
         function MEJORARESTO() {
             if (CLICKS >= PRECIORESTO) {
                 TOTALRESTOS = TOTALRESTOS + 1;
                 CLICKS = CLICKS - PRECIORESTO;
                 CPS = CPS + 1;
-                PRECIORESTO = PRECIORESTO * 1.1;
+                PRECIORESTO = PRECIORESTO * 1.3;
             }
             else if (CLICKS < PRECIORESTO) {
                 document.getElementById("MEJORARESTO").style.backgroundColor = "red";
@@ -131,13 +162,13 @@
                 TOTALHUERTA = TOTALHUERTA + 1;
                 CLICKS = CLICKS - PRECIOHUERTA;
                 CPS = CPS + 5;
-                PRECIOHUERTA = PRECIOHUERTA * 1.1;
+                PRECIOHUERTA = PRECIOHUERTA * 1.3;
             }
             else if (CLICKS < PRECIOHUERTA) {
                 document.getElementById("MEJORAHUERTA").style.backgroundColor = "red";
             }
         }
-
+    //INTERVALOS---------------------------------------------------------
 
         setInterval(function () {
             MEJORACHECK();
@@ -184,6 +215,21 @@
                 MEJORAS
             </div>
 
+            <div class="MEJORACLICKCUADRO" id="MEJORACLICKCUADRO">
+                <a href="#" onclick="MEJORACLICK()">
+                    <div id="UPGRADETEXTO" style="color:black">
+                        PAPA HERVIDA
+                    </div>
+                </a>
+                <div style="font-size:30px;">
+                    MEJORA TU PAPA ALCONSEGUIR 100 RESTAURANTES
+                </div>
+            </div>
+
+            <p class="ESPACIO">
+
+            </p>
+
             <div id="MEJORARESTO" class="MEJORAS">
                 <a href="#" onclick="MEJORARESTO()">
                     <div id="RESTOTEXTO" style="color:black">
@@ -221,7 +267,7 @@
         </div>
 
         <p style="text-align:center;width:50%;float:right;position:absolute;right:5px;">
-            <img src="IMAGENES/PAPAINICIAL.png" style="width:80%" class="BOTONPRINCIPAL" onclick="CLICKNORMAL()" />
+            <img src="IMAGENES/PAPAINICIAL.png" style="width:80%" class="BOTONPRINCIPAL" id="PAPAPRINCIPAL" onclick="CLICKNORMAL()" />
             <audio  controls="controls" id="ÑAM" hidden>
                 <source src="SONIDOS/ÑAM.mp3" type="audio/mp3"/>
             </audio>

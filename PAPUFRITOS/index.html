@@ -11,7 +11,7 @@
         PAPUFRITOS CLICKER
     </title>
 </head>
-<body style="background-color:#a33a0d;height:100%;overflow:hidden" id="FONDO" onload="init()">
+<body style="background-color:#a33a0d;" id="FONDO" onload="init()">
     <style>
         .BOTONPRINCIPAL:active {
             animation-name: ANIMACION;
@@ -41,7 +41,7 @@
         }
         .CONTENEDOR {
             width:100%;
-            height:600px;
+            height:650px;
         }
     </style>
 
@@ -160,13 +160,13 @@
         //FUNCIONES DE COMPRA---------------------------------------------------------------------------------
 
         function MEJORACLICK() {
-            if (TOTALRESTOS >= 100) {
+            if (TOTALRESTOS >= 50) {
                 SUMANORMAL = 20;
                 document.getElementById("MEJORACLICKCUADRO").style.overflow = "hidden";
                 document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAHERVIDA.png";
                 document.getElementById("TITULOPAPA").innerHTML = "PAPA HERVIDA";
             }
-            else if (TOTALRESTOS < 100) {
+            else if (TOTALRESTOS < 50) {
                 document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "red";
             }
         }
@@ -278,7 +278,7 @@
 
     <div class="CONTENEDOR">
 
-        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:50%;height:100%;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
+        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:50%;height:90%;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
 
             <div>
                 MEJORAS
@@ -291,7 +291,7 @@
                     </div>
                 </a>
                 <div style="font-size:30px;">
-                    Mejora tu papa al conseguir 100 restaurants
+                    Mejora tu papa al conseguir 50 restaurants
                 </div>
             </div>
 

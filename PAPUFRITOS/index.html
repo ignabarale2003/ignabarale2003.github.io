@@ -11,7 +11,7 @@
         PAPUFRITOS CLICKER
     </title>
 </head>
-<body style="background-color:#a33a0d;" id="FONDO" onload="init()">
+<body style="background-color:#a33a0d;margin-bottom:5px" id="FONDO" onload="init()">
     <style>
         .BOTONPRINCIPAL:active {
             animation-name: ANIMACION;
@@ -40,7 +40,7 @@
             font-size:40px;
         }
         .CONTENEDOR {
-            width:100%;
+            width:50%;
             height:650px;
         }
     </style>
@@ -91,7 +91,7 @@
         }
 
         function ACTUALIZACION() {
-            document.getElementById("input").innerHTML = CLICKS;
+            document.getElementById("input").innerText = CLICKS;
             document.getElementById("CPS").innerHTML = "PapasPS=" + CPS;
             document.getElementById("TITULO").innerHTML = "PAPUFRITOS-" + CLICKS;
             document.getElementById("CLICKSUMAINPUT").innerHTML = "PapasPC=" + SUMANORMAL;
@@ -164,7 +164,7 @@
                 SUMANORMAL = 20;
                 document.getElementById("MEJORACLICKCUADRO").style.overflow = "hidden";
                 document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAHERVIDA.png";
-                document.getElementById("TITULOPAPA").innerHTML = "PAPA HERVIDA";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA HERVIDA";
             }
             else if (TOTALRESTOS < 50) {
                 document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "red";
@@ -278,12 +278,23 @@
 
     <div class="CONTENEDOR">
 
-        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:50%;height:90%;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
+        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;background-image:url(IMAGENES/PAPAFONDO.png);background-size:40px;width:90%;height:90%;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
 
             <div>
                 MEJORAS
             </div>
-
+            <div style="height:50px">
+                <a href="#" onclick="GUARDAR">
+                    <div style="color:black;float:left;width:100px;text-align:center;font-size:30px;background-color:purple;border:3px solid black">
+                        SAVE
+                    </div>
+                </a>
+                <a href="#" onclick="GUARDAR">
+                    <div style="color:black;text-align:center;font-size:30px;background-color:purple;border:3px solid black;width:100px;float:right">
+                        LOAD
+                    </div>
+                </a>
+            </div>
             <div class="MEJORACLICKCUADRO" id="MEJORACLICKCUADRO">
                 <a href="#" onclick="MEJORACLICK()">
                     <div id="UPGRADETEXTO" style="color:black">

@@ -11,7 +11,7 @@
         PAPUFRITOS CLICKER
     </title>
 </head>
-<body style="background-color:#828282;background-image:url(IMAGENES/PAPAFONDO.png);background-size:30px" id="FONDO" onload="init()">
+<body style="background-color:#a33a0d" id="FONDO" onload="init()">
     <style>
         .BOTONPRINCIPAL:active {
             animation-name: ANIMACION;
@@ -41,40 +41,44 @@
         }
         .CONTENEDOR {
             width:100%;
-            height:90%;
+            height:600px;
         }
     </style>
 
     <script>
+        //INTERVALOS-------------------------------------------------------------------------------------------------------
 
-        //SONIDO
-        var PLAYCOUNT = 0;
+        setInterval(function () {
+            MEJORACHECK();
+        },1000 / 3)
 
-    function init() {
-        var ÑAM = document.getElementById("ÑAM");
-    }
-    function PLAYÑAM() {
-        ÑAM.load();
-        ÑAM.play();
-        PLAYCOUNT++
-    }
-        //SONIDO
+        setInterval(function () {
+            ACTUALIZACION();
+        },1000 / 30);
 
+        setInterval(function () {
+            CLICKSPS();
+        },1000 / 1);
+    
+        //INTERVALOS-----------------------------------------------------------------------------------------------------------
+       
         var CLICKS = 0;
         var SUMANORMAL = 1;
         var CPS = 0;
 
-        var FPS = 30;
-
-        var ELFOTO = 1;
-
-        var ROJITO = 3;
-
         var PRECIORESTO = 100;
         var TOTALRESTOS = 0;
 
-        var PRECIOHUERTA = 460;
+        var PRECIOHUERTA = 500;
         var TOTALHUERTA = 0;
+
+        var PRECIOPLANTACION = 2500;
+        var TOTALPLANTACION = 0;
+
+        var PRECIOFRANQUICIA = 12500;
+        var TOTALFRANQUICIA = 0;
+
+        //FUNCIONES PRINCIPALES------------------------------------------------------------------------------
 
         function CLICKNORMAL() {
             CLICKS = CLICKS + SUMANORMAL;
@@ -90,11 +94,22 @@
             document.getElementById("input").innerHTML = CLICKS;
             document.getElementById("CPS").innerHTML = "PapasPS=" + CPS;
             document.getElementById("TITULO").innerHTML = "PAPUFRITOS-" + CLICKS;
+            document.getElementById("CLICKSUMAINPUT").innerHTML = "PapasPC=" + SUMANORMAL;
             document.getElementById("RESTOTEXTO").innerHTML = "Restaurants - " + TOTALRESTOS + "-PRECIO = " + PRECIORESTO;
             document.getElementById("HUERTATEXTO").innerHTML = "Huertas - " + TOTALHUERTA + "-PRECIO = " + PRECIOHUERTA;
+            document.getElementById("PLANTACIONTEXTO").innerHTML = "Plantaciones - " + TOTALPLANTACION + "-PRECIO = " + PRECIOPLANTACION;
+            document.getElementById("FRANQUICIATEXTO").innerHTML = "Franquicias - " + TOTALFRANQUICIA + "-PRECIO = " + PRECIOFRANQUICIA;
         }
 
         //FUNCIONES DE CHECK----------------------------------------------------------------------------------
+
+        function MEJORACHECK() {
+            MEJORARESTOCHECK();
+            MEJORAHUERTACHECK();
+            MEJORACLICKCHECK();
+            MEJORAPLANTACIONCHECK();
+            MEJORAFRANQUICIACHECK();
+        }
         
         function MEJORACLICKCHECK() {
             if (TOTALRESTOS >= 100) {
@@ -124,19 +139,32 @@
             }
         }
 
-        function MEJORACHECK() {
-            MEJORARESTOCHECK();
-            MEJORAHUERTACHECK();
-            MEJORACLICKCHECK();
+        function MEJORAPLANTACIONCHECK() {
+            if (CLICKS >= PRECIOPLANTACION) {
+                document.getElementById("MEJORAPLANTACION").style.backgroundColor = "yellow";
+            }
+            else if (CLICKS < PRECIOPLANTACION) {
+                document.getElementById("MEJORAPLANTACION").style.backgroundColor = "grey";
+            }
         }
 
-        //FUNCIONES DE COMPRA
+        function MEJORAFRANQUICIACHECK() {
+            if (CLICKS >= PRECIOFRANQUICIA) {
+                document.getElementById("MEJORAFRANQUICIA").style.backgroundColor = "yellow";
+            }
+            else if (CLICKS < PRECIOFRANQUICIA) {
+                document.getElementById("MEJORAFRANQUICIA").style.backgroundColor = "grey";
+            }
+        }
+
+        //FUNCIONES DE COMPRA---------------------------------------------------------------------------------
 
         function MEJORACLICK() {
             if (TOTALRESTOS >= 100) {
                 SUMANORMAL = 20;
                 document.getElementById("MEJORACLICKCUADRO").style.overflow = "hidden";
                 document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAHERVIDA.png";
+                document.getElementById("TITULOPAPA").innerHTML = "PAPA HERVIDA";
             }
             else if (TOTALRESTOS < 100) {
                 document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "red";
@@ -168,20 +196,43 @@
                 document.getElementById("MEJORAHUERTA").style.backgroundColor = "red";
             }
         }
-    //INTERVALOS---------------------------------------------------------
 
-        setInterval(function () {
-            MEJORACHECK();
-        }, 1000 / ROJITO)
+        function MEJORAPLANTACION() {
+            if (CLICKS >= PRECIOPLANTACION) {
+                TOTALPLANTACION = TOTALPLANTACION + 1;
+                CLICKS = CLICKS - PRECIOPLANTACION;
+                CPS = CPS + 25;
+                PRECIOPLANTACION = PRECIOPLANTACION * 1.3;
+            }
+            else if (CLICKS < PRECIOPLANTACION) {
+                document.getElementById("MEJORAPLANTACION").style.backgroundColor = "red";
+            }
+        }
 
-        setInterval(function () {
-            ACTUALIZACION();
-        }, 1000 / FPS);
+        function MEJORAFRANQUICIA() {
+            if (CLICKS >= PRECIOFRANQUICIA) {
+                TOTALFRANQUICIA = TOTALFRANQUICIA + 1;
+                CLICS = CLICKS - PRECIOFRANQUICIA;
+                CPS = CPS + 125;
+                PRECIOFRANQUICIA = PRECIOFRANQUICIA * 1.3;
+            }
+            else if (CLICKS < PRECIOFRANQUICIA) {
+                document.getElementById("MEJORAFRANQUICIA").style.backgroundColor = "red";
+            }
+        }
+    //SONIDO
 
-        setInterval(function () {
-            CLICKSPS();
-        }, 1000 / ELFOTO);
+    var PLAYCOUNT = 0;
 
+    function init() {
+    var ÑAM = document.getElementById("ÑAM");
+    }
+    function PLAYÑAM() {
+        ÑAM.load();
+        ÑAM.play();
+        PLAYCOUNT++;
+    }
+    //SONIDO
     </script>
 
     <div>
@@ -205,11 +256,19 @@
         <p id="CPS" style="color:black;text-align:center;margin:auto;max-width:600px;font-family:'Berlin Sans FB';font-size:20px;">
 
         </p>
+
+        <p id="CLICKSUMAINPUT" style="color:black;text-align:center;margin:auto;max-width:600px;font-family:'Berlin Sans FB';font-size:20px;">
+
+        </p>
     </div>
+
+    <p class="ESPACIO">
+
+    </p>
 
     <div class="CONTENEDOR">
 
-        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:50%;height:80%;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
+        <div id="MEJORASCUADRO" style="overflow:scroll;float:left;background-color:orange;width:50%;height:inherit;border:4px solid black;font-family:'Berlin Sans FB';font-size:50px;text-align:center;">
 
             <div>
                 MEJORAS
@@ -222,7 +281,7 @@
                     </div>
                 </a>
                 <div style="font-size:30px;">
-                    MEJORA TU PAPA ALCONSEGUIR 100 RESTAURANTES
+                    Mejora tu papa al conseguir 100 restaurants
                 </div>
             </div>
 
@@ -261,6 +320,44 @@
                         Cosecha 5 papas por segundo!
                     </div>
                     <img src="IMAGENES/HUERTA.png" style="height:84px" />
+                </div>
+            </div>
+
+            <p class="ESPACIO">
+
+            </p>
+
+            <div id="MEJORAPLANTACION" class="MEJORAS">
+                <a href="#" onclick="MEJORAPLANTACION()">
+                    <div id="PLANTACIONTEXTO" style="color:black">
+
+                    </div>
+                </a>
+
+                <div>
+                    <div style="font-size:30px">
+                        Cosecha 25 papas por segundo!
+                    </div>
+                    <img src="IMAGENES/TRACTOR.png" style="height:84px" />
+                </div>
+            </div>
+
+            <p class="ESPACIO">
+
+            </p>
+
+            <div id="MEJORAFRANQUICIA" class="MEJORAS">
+                <a href="#" onclick="MEJORAFRANQUICIA()">
+                    <div id="FRANQUICIATEXTO" style="color:black">
+
+                    </div>
+                </a>
+
+                <div>
+                    <div style="font-size:30px">
+                        Vende 125 papas por segundo!
+                    </div>
+                    <img src="IMAGENES/FRANQUICIA.png" style="height:84px" />
                 </div>
             </div>
 

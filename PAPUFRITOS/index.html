@@ -105,16 +105,29 @@
             document.getElementById("PLANTACIONTEXTO").innerHTML = "Plantaciones - " + TOTALPLANTACION + "-PRECIO = " + PRECIOPLANTACION;
             document.getElementById("FABRICATEXTO").innerHTML = "Fabricas - " + TOTALFABRICA + "-PRECIO = " + PRECIOFABRICA;
             document.getElementById("FRANQUICIATEXTO").innerHTML = "Franquicias - " + TOTALFRANQUICIA + "-PRECIO = " + PRECIOFRANQUICIA;
+            Math.round();
         }
 
         function SAVE() {
             localStorage.setItem("CLICKS", CLICKS);
+            localStorage.setItem("CPS", CPS);
+
+            localStorage.setItem("PRECIORESTO", PRECIORESTO);
+            localStorage.setItem("TOTALRESTOS", TOTALRESTOS);
         }
 
         function LODE() {
             CLICKS = localStorage.getItem("CLICKS");
             CLICKS = parseInt(CLICKS);
             document.getElementById("input").value = CLICKS;
+
+            CPS = localStorage.getItem("CPS");
+            CPS = parseInt(CPS);
+
+            PRECIORESTO = localStorage.getItem("PRECIORESTO");
+            PRECIORESTO = parseInt(PRECIORESTO);
+            TOTALRESTOS = localStorage.getItem("TOTALRESTOS");
+            TOTALRESTOS = parseInt(TOTALRESTOS);
         }
 
         //FUNCIONES DE CHECK----------------------------------------------------------------------------------
@@ -287,7 +300,7 @@
     <div>
 
         <div style="color:black;text-align:center;font-family:'Berlin Sans FB';font-size:50px;height:60px;background-color:orange;border:3px solid black;">
-            Papufrito's Clicker
+            Papafrito's Clicker
         </div>
 
         <p style="font-size:20px">

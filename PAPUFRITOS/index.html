@@ -315,16 +315,56 @@
                 document.getElementById("TIPODEPAPA").innerHTML = "PAPA RUSTICA";
                 document.getElementById("UPGRADETEXTO").innerHTML = "PAPA ONDULADA";
                 document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 franquicias para desbloquear un nuevo tipo de papa";
-                NIVEL = 3;
+                NIVEL = 4;
                 LEVEL5();
             }
             else if (TOTALFABRICA < 50) {
                 NIVEL = 3;
             }
         }
-
-
-
+        function LEVEL5() {
+            if (TOTALFRANQUICIA >= 50) {
+                SUMANORMAL = 400;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAONDULADA.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA ONDULADA";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA MINECRAFT";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 papas premium para desbloquear un nuevo tipo de papa";
+                NIVEL = 5;
+                LEVEL6();
+            }
+            else if (TOTALFRANQUICIA < 50) {
+                NIVEL = 4;
+            }
+        }
+        function LEVEL6() {
+            if (TOTALPREMIUM >= 50) {
+                SUMANORMAL = 400;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAMINECRAFT.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA MINECRAFT";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA ";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 papas cuanticas para desbloquear un nuevo tipo de papa";
+                NIVEL = 6;
+                LEVEL7();
+            }
+            else if (TOTALPREMIUM < 50) {
+                NIVEL = 5;
+            }
+        }
+        function LEVEL7() {
+            if (TOTALCUANTICA >= 50) {
+                SUMANORMAL = 1000;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAREY.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA REY";
+                document.getElementById("UPGRADETEXTO").innerHTML = "FINAL";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Has llegado al final del juego! felicidades";
+                NIVEL = 7;
+            }
+            else if (TOTALCUANTICA < 50) {
+                NIVEL = 6;
+            }
+        }
+        
+        
         function MEJORARESTO() {
             if (CLICKS >= PRECIORESTO) {
                 TOTALRESTOS = TOTALRESTOS + 1;

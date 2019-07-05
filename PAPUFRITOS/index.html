@@ -200,15 +200,6 @@
             MEJORAPAPASCUANTICASCHECK();
         }
         
-        function MEJORACLICKCHECK() {
-            if (TOTALRESTOS >= 50) {
-                document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "green";
-            }
-            else if (TOTALRESTOS < 50) {
-                document.getElementById("MEJORACLICKCUADRO").style.backgroundColor = "grey";
-            }
-        }
-        
 
         function MEJORARESTOCHECK() {
             if (CLICKS >= PRECIORESTO) {
@@ -282,13 +273,49 @@
                 document.getElementById("UPGRADETEXTO").innerHTML = "PAPA BOLITA";
                 document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 huertas para desbloquear un nuevo tipo de papa";
                 NIVEL = 1;
+                LEVEL2();
             }
-            else if ((NIVEL = 1)( TOTALHUERTA >= 50)) {
-                SUMANORMAL = 100;
+            else if (TOTALRESTOS < 50) {
+                NIVEL = 0;
+            }
+        }
+        function LEVEL2() {
+           if (TOTALHUERTA >= 50) {
                 document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPABOLITA.png";
-                document.getElementById("TIPODEPAPA").innerHTML = "PAPABOLITA";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA BOLITA";
                 document.getElementById("UPGRADETEXTO").innerHTML = "PAPA CHIP";
-                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 plantaciones para desbloquear un  nuevo tipo de papa";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 plantaciones para desbloquear un nuevo tipo de papa";
+                NIVEL = 2;
+                LEVEL3();
+           }
+           else if (TOTALHUERTA < 50) {
+                NIVEL = 1;
+           }
+        }
+        function LEVEL3() {
+            if (TOTALPLANTACION >= 50) {
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPACHIP.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA CHIP";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA RUSTICA";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 fabricas para desbloquear un nuevo tipo de papa";
+                NIVEL = 3;
+                LEVEL4();
+            }
+            else if (TOTALPLANTACION < 50) {
+                NIVEL = 2;
+            }
+        }
+        function LEVEL4() {
+            if (TOTALFABRICA >= 50) {
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPARUSTICA.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA RUSTICA";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA ONDULADA";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 franquicias para desbloquear un nuevo tipo de papa";
+                NIVEL = 3;
+                LEVEL5();
+            }
+            else if (TOTALFABRICA < 50) {
+                NIVEL = 3;
             }
         }
 

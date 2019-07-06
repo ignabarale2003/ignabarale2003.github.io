@@ -163,8 +163,12 @@
             CLICKS = localStorage.getItem("CLICKS");
             CLICKS = parseInt(CLICKS);
             document.getElementById("input").value = CLICKS;
+
+
             CPS = localStorage.getItem("CPS");
             CPS = parseInt(CPS);
+
+
             PRECIORESTO = localStorage.getItem("PRECIORESTO");
             PRECIORESTO = parseInt(PRECIORESTO);
             TOTALRESTOS = localStorage.getItem("TOTALRESTOS");
@@ -203,38 +207,6 @@
             MEJORACLICK();
         }
 
-            PRECIOHUERTA = localStorage.getItem("PRECIOHUERTA");
-            PRECIOHUERTA = parseInt(PRECIOHUERTA);
-            TOTALHUERTA = localStorage.getItem("TOTALHUERTA");
-            TOTALHUERTA = parseInt(TOTALHUERTA);
-
-            PRECIOPLANTACION = localStorage.getItem("PRECIOPLANTACION");
-            PRECIOPLANTACION = parseInt(PRECIOPLANTACION);
-            TOTALPLANTACION = localStorage.getItem("TOTALPLANTACION");
-            TOTALPLANTACION = parseInt(TOTALPLANTACION);
-
-            PRECIOFABRICA = localStorage.getItem("PRECIOFABRICA");
-            PRECIOFABRICA = parseInt(PRECIOFABRICA);
-            TOTALFABRICA = localStorage.getItem("TOTALFABRICA");
-            TOTALFABRICA = parseInt(TOTALFABRICA);
-
-            PRECIOFRANQUICIA = localStorage.getItem("PRECIOFRANQUICIA");
-            PRECIOFRANQUICIA = parseInt(PRECIOFRANQUICIA);
-            TOTALFRANQUICIA = localStorage.getItem("TOTALFRANQUICIA");
-            TOTALFRANQUICIA = parseInt(TOTALFRANQUICIA);
-
-            PRECIOPREMIUM = localStorage.getItem("PRECIOPREMIUM");
-            PRECIOPREMIUM = parseInt(PRECIOPREMIUM);
-            TOTALPREMIUM = localStorage.getItem("TOTALPREMIUM");
-            TOTALPREMIUM = parseInt(TOTALPREMIUM);
-
-            PRECIOCUANTICA = localStorage.getItem("PRECIOCUANTICA");
-            PRECIOCUANTICA = parseInt(PRECIOCUANTICA);
-            TOTALCUANTICA = localStorage.getItem("TOTALCUANTICA");
-            TOTALCUANTICA = parseInt(TOTALCUANTICA);
-
-            MEJORACLICK();
-        }
         //FUNCIONES DE CHECK----------------------------------------------------------------------------------
         function MEJORACHECK() {
             MEJORARESTOCHECK();
@@ -304,6 +276,7 @@
             }
         }
         //FUNCIONES DE COMPRA---------------------------------------------------------------------------------
+
         function MEJORACLICK() {
             if (TOTALRESTOS >= 50) {
                 SUMANORMAL = 20;
@@ -331,7 +304,6 @@
             else if (TOTALHUERTA < 50) {
                 NIVEL = 1;
             }
-           }
         }
         function LEVEL3() {
             if (TOTALPLANTACION >= 50) {
@@ -402,10 +374,6 @@
                 NIVEL = 6;
             }
         }
-
-
-            }
-        }
         function LEVEL4() {
             if (TOTALFABRICA >= 50) {
                 SUMANORMAL = 250;
@@ -461,6 +429,8 @@
                 NIVEL = 6;
             }
         }
+
+        
         function MEJORARESTO() {
             if (CLICKS >= PRECIORESTO) {
                 TOTALRESTOS = TOTALRESTOS + 1;

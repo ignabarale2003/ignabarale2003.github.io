@@ -121,6 +121,25 @@
             localStorage.setItem("CPS", CPS);
             localStorage.setItem("PRECIORESTO", PRECIORESTO);
             localStorage.setItem("TOTALRESTOS", TOTALRESTOS);
+            
+            localStorage.setItem("PRECIOHUERTA", PRECIOHUERTA)
+            localStorage.setItem("TOTALHUERTA", TOTALHUERTA)
+            
+            localStorage.setItem("PRECIOPLANTACION", PRECIOPLANTACION);
+            localStorage.setItem("TOTALPLANTACION", TOTALPLANTACION);
+            
+            localStorage.setItem("PRECIOFABRICA", PRECIOFABRICA);
+            localStorage.setItem("TOTALFABRICA", TOTALFABRICA);
+            
+            localStorage.setItem("PRECIOFRANQUICIA", PRECIOFRANQUICIA);
+            localStorage.setItem("TOTALFRANQUICIA", TOTALFRANQUICIA);
+            
+            localStorage.setItem("PRECIOPREMIUM", PRECIOPREMIUM);
+            localStorage.setItem("TOTALPREMIUM", TOTALPREMIUM);
+            
+            localStorage.setItem("PRECIOCUANTICA", PRECIOCUANTICA);
+            localStorage.setItem("TOTALCUANTICA", TOTALCUANTICA);
+        }
 
             localStorage.setItem("PRECIOHUERTA", PRECIOHUERTA)
             localStorage.setItem("TOTALHUERTA", TOTALHUERTA)
@@ -150,6 +169,39 @@
             PRECIORESTO = parseInt(PRECIORESTO);
             TOTALRESTOS = localStorage.getItem("TOTALRESTOS");
             TOTALRESTOS = parseInt(TOTALRESTOS);
+            
+            PRECIOHUERTA = localStorage.getItem("PRECIOHUERTA");
+            PRECIOHUERTA = parseInt(PRECIOHUERTA);
+            TOTALHUERTA = localStorage.getItem("TOTALHUERTA");
+            TOTALHUERTA = parseInt(TOTALHUERTA);
+            
+            PRECIOPLANTACION = localStorage.getItem("PRECIOPLANTACION");
+            PRECIOPLANTACION = parseInt(PRECIOPLANTACION);
+            TOTALPLANTACION = localStorage.getItem("TOTALPLANTACION");
+            TOTALPLANTACION = parseInt(TOTALPLANTACION);
+            
+            PRECIOFABRICA = localStorage.getItem("PRECIOFABRICA");
+            PRECIOFABRICA = parseInt(PRECIOFABRICA);
+            TOTALFABRICA = localStorage.getItem("TOTALFABRICA");
+            TOTALFABRICA = parseInt(TOTALFABRICA);
+            
+            PRECIOFRANQUICIA = localStorage.getItem("PRECIOFRANQUICIA");
+            PRECIOFRANQUICIA = parseInt(PRECIOFRANQUICIA);
+            TOTALFRANQUICIA = localStorage.getItem("TOTALFRANQUICIA");
+            TOTALFRANQUICIA = parseInt(TOTALFRANQUICIA);
+            
+            PRECIOPREMIUM = localStorage.getItem("PRECIOPREMIUM");
+            PRECIOPREMIUM = parseInt(PRECIOPREMIUM);
+            TOTALPREMIUM = localStorage.getItem("TOTALPREMIUM");
+            TOTALPREMIUM = parseInt(TOTALPREMIUM);
+            
+            PRECIOCUANTICA = localStorage.getItem("PRECIOCUANTICA");
+            PRECIOCUANTICA  = parseInt(PRECIOCUANTICA);
+            TOTALCUANTICA = localStorage.getItem("TOTALCUANTICA");
+            TOTALCUANTICA = parseInt(TOTALCUANTICA);
+            
+            MEJORACLICK();
+        }
 
             PRECIOHUERTA = localStorage.getItem("PRECIOHUERTA");
             PRECIOHUERTA = parseInt(PRECIOHUERTA);
@@ -193,6 +245,7 @@
             MEJORAPREMIUMCHECK();
             MEJORAPAPASCUANTICASCHECK();
         }
+        
 
         function MEJORARESTOCHECK() {
             if (CLICKS >= PRECIORESTO) {
@@ -266,7 +319,7 @@
             }
         }
         function LEVEL2() {
-            if (TOTALHUERTA >= 50) {
+           if (TOTALHUERTA >= 50) {
                 SUMANORMAL = 100;
                 document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPABOLITA.png";
                 document.getElementById("TIPODEPAPA").innerHTML = "PAPA BOLITA";
@@ -278,6 +331,7 @@
             else if (TOTALHUERTA < 50) {
                 NIVEL = 1;
             }
+           }
         }
         function LEVEL3() {
             if (TOTALPLANTACION >= 50) {
@@ -350,6 +404,63 @@
         }
 
 
+            }
+        }
+        function LEVEL4() {
+            if (TOTALFABRICA >= 50) {
+                SUMANORMAL = 250;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPARUSTICA.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA RUSTICA";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA ONDULADA";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 franquicias para desbloquear un nuevo tipo de papa";
+                NIVEL = 4;
+                LEVEL5();
+            }
+            else if (TOTALFABRICA < 50) {
+                NIVEL = 3;
+            }
+        }
+        function LEVEL5() {
+            if (TOTALFRANQUICIA >= 50) {
+                SUMANORMAL = 400;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAONDULADA.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA ONDULADA";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA MINECRAFT";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 papas premium para desbloquear un nuevo tipo de papa";
+                NIVEL = 5;
+                LEVEL6();
+            }
+            else if (TOTALFRANQUICIA < 50) {
+                NIVEL = 4;
+            }
+        }
+        function LEVEL6() {
+            if (TOTALPREMIUM >= 50) {
+                SUMANORMAL = 400;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAMINECRAFT.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA MINECRAFT";
+                document.getElementById("UPGRADETEXTO").innerHTML = "PAPA ";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Consigue 50 papas cuanticas para desbloquear un nuevo tipo de papa";
+                NIVEL = 6;
+                LEVEL7();
+            }
+            else if (TOTALPREMIUM < 50) {
+                NIVEL = 5;
+            }
+        }
+        function LEVEL7() {
+            if (TOTALCUANTICA >= 50) {
+                SUMANORMAL = 1000;
+                document.getElementById("PAPAPRINCIPAL").src = "IMAGENES/PAPAREY.png";
+                document.getElementById("TIPODEPAPA").innerHTML = "PAPA REY";
+                document.getElementById("UPGRADETEXTO").innerHTML = "FINAL";
+                document.getElementById("UPGRADEDESCRIPCION").innerHTML = "Has llegado al final del juego! felicidades";
+                NIVEL = 7;
+            }
+            else if (TOTALCUANTICA < 50) {
+                NIVEL = 6;
+            }
+        }
         function MEJORARESTO() {
             if (CLICKS >= PRECIORESTO) {
                 TOTALRESTOS = TOTALRESTOS + 1;

@@ -102,7 +102,7 @@
 
         var PRECIOCUANTICA = 1562500;
         var TOTALCUANTICA = 0;
-        
+
         //VARIABLES------------------------------------------------------------------------------------------------------------
         //FUNCIONES PRINCIPALES------------------------------------------------------------------------------
         function CLICKNORMAL() {
@@ -110,9 +110,11 @@
             document.getElementById("input").getAnimations = "ANIMACION";
             PLAYÑAM();
         }
+
         function CLICKSPS() {
             CLICKS = CLICKS + CPS;
         }
+
         function ACTUALIZACION() {
             document.getElementById("input").innerText = CLICKS;
             document.getElementById("CPS").innerHTML = "PapasPS=" + CPS;
@@ -126,9 +128,12 @@
             document.getElementById("PREMIUMTEXTO").innerHTML = "Papas premium - " + TOTALPREMIUM + "-PRECIO = " + PRECIOPREMIUM;
             document.getElementById("CUANTICATEXTO").innerHTML = "Fabrica de papas cuanticas - " + TOTALCUANTICA + "-PRECIO = " + PRECIOCUANTICA;
         }
+        
         function SAVE() {
             localStorage.setItem("CLICKS", CLICKS);
             localStorage.setItem("CPS", CPS);
+
+
             localStorage.setItem("PRECIORESTO", PRECIORESTO);
             localStorage.setItem("TOTALRESTOS", TOTALRESTOS);
             
@@ -147,25 +152,6 @@
             localStorage.setItem("PRECIOPREMIUM", PRECIOPREMIUM);
             localStorage.setItem("TOTALPREMIUM", TOTALPREMIUM);
             
-            localStorage.setItem("PRECIOCUANTICA", PRECIOCUANTICA);
-            localStorage.setItem("TOTALCUANTICA", TOTALCUANTICA);
-        }
-
-            localStorage.setItem("PRECIOHUERTA", PRECIOHUERTA)
-            localStorage.setItem("TOTALHUERTA", TOTALHUERTA)
-
-            localStorage.setItem("PRECIOPLANTACION", PRECIOPLANTACION);
-            localStorage.setItem("TOTALPLANTACION", TOTALPLANTACION);
-
-            localStorage.setItem("PRECIOFABRICA", PRECIOFABRICA);
-            localStorage.setItem("TOTALFABRICA", TOTALFABRICA);
-
-            localStorage.setItem("PRECIOFRANQUICIA", PRECIOFRANQUICIA);
-            localStorage.setItem("TOTALFRANQUICIA", TOTALFRANQUICIA);
-
-            localStorage.setItem("PRECIOPREMIUM", PRECIOPREMIUM);
-            localStorage.setItem("TOTALPREMIUM", TOTALPREMIUM);
-
             localStorage.setItem("PRECIOCUANTICA", PRECIOCUANTICA);
             localStorage.setItem("TOTALCUANTICA", TOTALCUANTICA);
         }

@@ -20,18 +20,15 @@
 
         @keyframes ANIMACION {
             0% {
-                width: 80%;
-                height: 80%
+                width:100%
             }
 
             50% {
-                width: 70%;
-                height: 70%
+                width:80%
             }
 
             100% {
-                width: 80%;
-                height: 80%
+                width:100%
             }
         }
 
@@ -729,7 +726,8 @@
         </div>
 
         <p style="text-align:center;width:50%;float:right;position:absolute;right:5px;">
-            <img src="IMAGENES/PAPAINICIAL.png" style="width:80%" class="BOTONPRINCIPAL" id="PAPAPRINCIPAL" onclick="CLICKNORMAL()" />
+
+            <img src="IMAGENES/PAPAINICIAL.png" style="max-height:650px" class="BOTONPRINCIPAL" id="PAPAPRINCIPAL" onclick="CLICKNORMAL()" />
 
             <audio controls="controls" id="ÑAM" hidden>
                 <source src="SONIDOS/ÑAM.mp3" type="audio/mp3" />
